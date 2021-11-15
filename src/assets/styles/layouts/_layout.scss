@@ -1,0 +1,25 @@
+.app {
+  display: flex;
+  margin: 0 auto;
+  width: 1265px;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.header-container {
+  margin: 0 12px;
+  width: 251px;
+}
+
+.main-container {
+  width: 598px;
+  border-right: 1px solid $light-grey-1;
+  border-left: 1px solid $light-grey-1;
+}
+
+.aside-container {
+  margin-left: 32px;
+  margin-right: 12px;
+  padding-bottom: 64px;
+  width: 348px;
+}
