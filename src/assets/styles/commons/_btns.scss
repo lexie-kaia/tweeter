@@ -1,0 +1,78 @@
+@mixin btn-size-36($width: null) {
+  border-radius: 18px;
+  height: 36px;
+
+  @if $width != null {
+    width: #{$width};
+  }
+}
+
+@mixin btn-size-40($width: null) {
+  border-radius: 20px;
+  height: 40px;
+
+  @if $width != null {
+    width: #{$width};
+  }
+}
+
+@mixin btn-size-48($width: null) {
+  border-radius: 24px;
+  height: 48px;
+
+  @if $width != null {
+    width: #{$width};
+  }
+}
+
+@mixin btn-size-64($width: null) {
+  border-radius: 32px;
+  height: 64px;
+
+  @if $width != null {
+    width: #{$width};
+  }
+}
+
+@mixin btn-color($background: $white, $color: $black) {
+  background: #{$background};
+  color: #{$color};
+}
+
+@mixin btn-effect($background, $color: null) {
+  transition: background 100ms, box-shadow 100ms;
+
+  &:hover,
+  &:active {
+    background: #{$background};
+    @if color != null {
+      color: #{$color};
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+    background: #{$background};
+    @if color != null {
+      color: #{$color};
+    }
+    box-shadow: 0 0 0 2px $blue-line;
+  }
+}
+
+@mixin btn-effect-light {
+  transition: background 100ms, box-shadow 100ms;
+
+  &:hover,
+  &:active {
+    background: $blue-hover;
+    color: $blue;
+  }
+
+  &:focus-visible {
+    outline: none;
+    background: $blue-hover;
+    color: $blue;
+    box-shadow: 0 0 0 2px $blue-line;
+  }
+}

@@ -1,0 +1,17 @@
+@mixin typo-large($font-weight: 400) {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: #{$font-weight};
+}
+
+@mixin typo-regular($font-weight: 400) {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: #{$font-weight};
+}
+
+@mixin typo-small($font-weight: 400) {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: #{$font-weight};
+}

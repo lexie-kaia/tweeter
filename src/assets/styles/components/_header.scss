@@ -1,0 +1,96 @@
+.header-content {
+  @include flex-col(space-between, null);
+  position: fixed;
+  top: 0;
+  width: 251px;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.header-content .global-nav {
+  .menu-btn {
+    @include btn-size-48;
+    @include btn-effect-light;
+    @include inline-flex-center;
+    @include typo-large(700);
+    margin: 2px 0;
+    padding: 0 10px;
+
+    &.current,
+    &.logo {
+      color: $blue;
+    }
+  }
+
+  .menu-icon {
+    @include icon-28;
+
+    &.notified {
+      position: relative;
+
+      .notif {
+        @include inline-flex-center;
+        position: absolute;
+        top: 2px;
+        right: -2px;
+        border-radius: 7px;
+        width: 14px;
+        height: 14px;
+        background: $blue;
+        color: $white;
+        font-size: 10px;
+      }
+    }
+  }
+
+  .menu-text {
+    margin: 0 6px 0 16px;
+    text-transform: capitalize;
+  }
+
+  .tweet-btn {
+    @include inline-flex-center;
+    @include btn-size-48(100%);
+    @include btn-color($blue, $white);
+    @include btn-effect($dark-blue);
+    @include typo-large(700);
+    margin-top: 16px;
+    text-transform: capitalize;
+  }
+}
+
+.header-content .profile-btn {
+  @include inline-flex-between;
+  @include btn-size-64(100%);
+  @include btn-effect($offwhite);
+  margin: 12px 0;
+  padding: 0 12px;
+
+  .info {
+    @include flex();
+
+    .avatar {
+      @include avatar-size-40;
+      flex-shrink: 0;
+      margin-right: 12px;
+    }
+
+    .detail {
+      @include flex-col(null, flex-start);
+
+      .username {
+        @include typo-regular(700);
+      }
+
+      .userid {
+        @include typo-regular;
+        color: $dark-grey;
+      }
+    }
+  }
+
+  .more-icon {
+    @include icon-20;
+    color: $dark-grey;
+  }
+}

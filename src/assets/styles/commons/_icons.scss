@@ -1,0 +1,13 @@
+@mixin icon-28 {
+  @include inline-flex-center;
+  width: 28px;
+  height: 28px;
+  font-size: 24px;
+}
+
+@mixin icon-20 {
+  @include inline-flex-center;
+  width: 20px;
+  height: 20px;
+  font-size: 18px;
+}

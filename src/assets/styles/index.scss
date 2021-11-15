@@ -1,3 +1,12 @@
+@import './base/constants';
 @import './base/normalize';
+@import './base/typo';
+@import './base/align';
+
+@import './commons/icons';
+@import './commons/btns';
+@import './commons/avatars';
 
 @import './layouts/layout';
+
+@import './components/header';
