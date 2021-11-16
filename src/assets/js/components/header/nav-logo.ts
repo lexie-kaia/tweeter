@@ -11,7 +11,7 @@ const logoIconClass = 'fab fa-twitter';
 class NavLogo extends HTMLElement {
   render() {
     const menuBtn = createElem('a', this, 'menu-btn logo');
-    menuBtn.setAttribute('href', '#');
+    menuBtn.setAttribute('href', '/');
     const menuIcon = createElem('span', menuBtn, 'menu-icon');
     const i = createElem('i', menuIcon, logoIconClass);
   }

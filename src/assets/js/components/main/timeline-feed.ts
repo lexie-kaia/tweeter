@@ -252,6 +252,7 @@ class TimelineFeed extends HTMLElement {
     feedTitle.textContent = `A Tweet from ${feed.profile.name}`;
 
     const profileAvatar = createElem('a', feedContainer, 'profile-avatar');
+    profileAvatar.setAttribute('href', `#${feed.profile.name}`);
     const img = createElem('img', profileAvatar);
     img.setAttribute('src', feed.profile.img.path);
     img.setAttribute('alt', `${feed.profile.name} avatar`);
