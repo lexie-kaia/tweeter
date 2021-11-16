@@ -34,16 +34,51 @@
             </nav-menu-list>
             <nav-tweet-btn text="tweet"></nav-tweet-btn>
           </nav>
-          <user-profile username="BirdHeart" user-id="@1234567890" img-path="./dist/static/imgs/tweeter_profile-2.jpg" btn-aria="view user profile" btn-fa-icon="fas fa-ellipsis-h" ></user-profile>
+          <user-profile username="BirdHeart" user-id="@1234567890" img-path="./dist/static/imgs/tweeter_profile-2.jpg"  btn-fa-icon="fas fa-ellipsis-h" ></user-profile>
         </div>
       </header>
 
-      <!-- <main class="main-container">
-        <main-header></main-header>
-        <main-tweet></main-tweet>
+      <main class="main-container">
+        <page-header page-title="home" btn-fa-icon="fas fa-meteor"></page-header>
+
+        <section class="tweet-section">
+          <tweet-avatar username="BirdHeart" img-path="./dist/static/imgs/tweeter_profile-2.jpg"></tweet-avatar>
+          <form action="#" method="POST" class="tweet-form">
+            <textarea
+              name="tweet"
+              id="tweet"
+              placeholder="What's happening?"
+              maxlength="280"
+              class="tweet-textarea"
+            ></textarea>
+            
+            <div class="tweet-options">
+              <tweet-option-list>
+                <tweet-option-item btn-aria="add photos or videos" btn-fa-icon="far fa-images"></tweet-option-item>
+                <tweet-option-item btn-aria="add a GIF" btn-fa-icon="fas fa-search-plus"></tweet-option-item>
+                <tweet-option-item btn-aria="add poll" btn-fa-icon="fas fa-poll-h"></tweet-option-item>
+                <tweet-option-item btn-aria="add emoji" btn-fa-icon="far fa-smile"></tweet-option-item>
+                <tweet-option-item btn-aria="schedule tweet" btn-fa-icon="far fa-calendar-alt"></tweet-option-item>
+              </tweet-option-list>
+
+              <tweet-submit-btn></tweet-submit-btn>
+            </div>
+          </form>
+        </section>
+
         <div class="main-divider"></div>
-        <main-timeline></main-timeline>
-      </main> -->
+
+        <section class="new-timeline">
+          <h2 class="sr-only">your timeline</h2>
+          <timeline-feed-list>
+            <timeline-feed-item feed-index="0"></timeline-feed-item>
+            <timeline-feed-item feed-index="1"></timeline-feed-item>
+            <timeline-feed-item feed-index="2"></timeline-feed-item>
+            <timeline-feed-item feed-index="3"></timeline-feed-item>
+            <timeline-feed-item feed-index="4"></timeline-feed-item>
+          </timeline-feed-list>
+        </section>
+      </main>
 
       <!-- <aside class="aside-container">
         <div class="aside-content">

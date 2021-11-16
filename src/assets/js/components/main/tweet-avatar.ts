@@ -1,25 +1,23 @@
-import { createElem } from '../../helper';
-
-// <a hrer="#" class="avatar">
-//   <img src="./dist/static/imgs/tweeter_profile_2.jpg" alt="birdheart avatar" />
-// </a>;
-
-const profileImg = {
-  path: './dist/static/imgs/tweeter_profile-2.jpg',
-  alt: 'birdheart avatar',
-};
-
 class TweetAvatar extends HTMLElement {
-  render() {
-    const avatar = createElem('a', this, 'avatar');
-    avatar.setAttribute('href', '#');
-    const img = createElem('img', avatar);
-    img.setAttribute('src', profileImg.path);
-    img.setAttribute('alt', profileImg.alt);
+  constructor() {
+    super();
+    this.render();
   }
 
-  connectedCallback() {
-    this.render();
+  render() {
+    this.innerHTML = `
+      <a href="#${this.username}" class="avatar-link">
+        <img src="${this.imgPath}" alt="${this.username} avatar" />
+      </a>
+    `;
+  }
+
+  get imgPath() {
+    return this.getAttribute('img-path');
+  }
+
+  get username() {
+    return this.getAttribute('username');
   }
 }
 

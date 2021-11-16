@@ -1,9 +1,9 @@
-main-header {
-  .header-wrapper {
+page-header {
+  .fixed-wrapper {
     height: 52px;
   }
 
-  .header {
+  .page-header {
     position: fixed;
     top: 0;
     @include flex(space-between, center);
@@ -13,40 +13,40 @@ main-header {
     width: 596px;
     background: $white;
 
-    .title {
+    .page-title {
       @include typo-large(700);
       text-transform: capitalize;
     }
 
-    .top-tweet-btn {
+    .top-tweets-btn {
       @include btn-icon-only($blue);
       @include btn-effect-light;
     }
   }
 }
 
-main-tweet {
-  .main-tweet {
-    @include flex;
-    border-bottom: 1px solid $light-grey-1;
-    padding: 12px 16px;
-  }
+.tweet-section {
+  @include flex;
+  border-bottom: 1px solid $light-grey-1;
+  padding: 12px 16px;
 
-  .avatar {
-    @include avatar-size-48;
-    margin-right: 12px;
-    transition: box-shadow 100ms;
+  tweet-avatar {
+    .avatar-link {
+      @include avatar-size-48;
+      margin-right: 12px;
+      transition: box-shadow 100ms;
 
-    &:focus {
-      outline: none;
-      box-shadow: 0 0 0 2px $blue-line;
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px $blue-line;
+      }
     }
   }
 
-  .form {
+  .tweet-form {
     flex-grow: 1;
 
-    .textarea {
+    .tweet-textarea {
       @include typo-large;
       padding: 12px 0 16px;
       border-bottom: 1px solid $light-grey-1;
@@ -63,26 +63,30 @@ main-tweet {
     }
   }
 
-  .footer {
+  .tweet-options {
     @include flex(space-between, center);
     margin-top: 8px;
 
-    .btn-list {
+    tweet-option-list {
       @include flex;
     }
 
-    .option-btn {
-      @include btn-icon-only($blue);
-      @include btn-effect-light;
+    tweet-option-item {
+      .option-btn {
+        @include btn-icon-only($blue);
+        @include btn-effect-light;
+      }
     }
 
-    .submit-btn {
-      @include btn-size-40;
-      @include btn-color($blue-line, $white);
-      @include btn-effect($blue);
-      @include typo-regular(700);
-      padding: 0 16px;
-      text-transform: capitalize;
+    tweet-submit-btn {
+      .submit-btn {
+        @include btn-size-40;
+        @include btn-color($blue-line, $white);
+        @include btn-effect($blue);
+        @include typo-regular(700);
+        padding: 0 16px;
+        text-transform: capitalize;
+      }
     }
   }
 }
@@ -93,7 +97,7 @@ main-tweet {
   background: $offwhite;
 }
 
-main-timeline {
+.new-timeline {
   .feed-container {
     @include flex;
     padding: 12px 16px;
@@ -102,12 +106,12 @@ main-timeline {
     &:hover {
       background: $offwhite;
     }
+  }
 
-    .profile-avatar {
-      @include avatar-size-48;
-      flex-shrink: 0;
-      margin-right: 12px;
-    }
+  .feed-avatar {
+    @include avatar-size-48;
+    flex-shrink: 0;
+    margin-right: 12px;
   }
 
   .feed-content {
@@ -119,7 +123,8 @@ main-timeline {
 
     .feed-profile {
       @include flex;
-      .profile-name {
+
+      .profile-username {
         @include typo-regular(700);
         margin-right: 8px;
         &:hover,
@@ -130,7 +135,7 @@ main-timeline {
         }
       }
 
-      .profile-username {
+      .profile-userid {
         @include typo-regular;
         color: $dark-grey;
         &::after {
@@ -181,18 +186,22 @@ main-timeline {
       flex-grow: 1;
     }
 
-    .reaction-btn {
+    .action-btn {
       @include btn-icon-only;
       margin-right: 4px;
+
+      & + .action-count {
+        color: $dark-grey;
+      }
     }
 
     .reply-btn,
     .share-btn {
       @include btn-effect-light;
 
-      &:hover + .reaction-count,
-      &:active + .reaction-count,
-      &:focus-visible + .reaction-count {
+      &:hover + .action-count,
+      &:active + .action-count,
+      &:focus-visible + .action-count {
         color: $blue;
       }
     }
@@ -200,9 +209,9 @@ main-timeline {
     .retweet-btn {
       @include btn-effect($green-hover, $green, $green-line);
 
-      &:hover + .reaction-count,
-      &:active + .reaction-count,
-      &:focus-visible + .reaction-count {
+      &:hover + .action-count,
+      &:active + .action-count,
+      &:focus-visible + .action-count {
         color: $green;
       }
     }
@@ -210,9 +219,9 @@ main-timeline {
     .like-btn {
       @include btn-effect($red-hover, $red, $red-line);
 
-      &:hover + .reaction-count,
-      &:active + .reaction-count,
-      &:focus-visible + .reaction-count {
+      &:hover + .action-count,
+      &:active + .action-count,
+      &:focus-visible + .action-count {
         color: $red;
       }
     }
