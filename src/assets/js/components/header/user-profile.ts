@@ -1,63 +1,54 @@
-import { createElem } from '../../helper';
-
-// <button class="profile-btn">
-//   <div class="info">
-//     <div class="avatar">
-//       <img src="./dist/static/imgs/tweeter_profile_2.jpg" alt="birdheart avatar" />
-//     </div>
-//     <div class="detail">
-//       <span class="username"> BirdHeart </span>
-//       <span class="userid"> @1234567890 </span>
-//     </div>
-//   </div>
-
-//   <span class="more-icon">
-//     <i class="fas fa-ellipsis-h"></i>
-//   </span>
-// </button>
-
-const profile = {
-  img: {
-    path: './dist/static/imgs/tweeter_profile-2.jpg',
-    alt: 'birdheart avatar',
-  },
-  username: 'BirdHeart',
-  userid: '@1234567890',
-};
-
-const btn = {
-  ariaLabel: 'View Profile',
-};
-
-const moreIconClass = 'fas fa-ellipsis-h';
-
 class UserProfile extends HTMLElement {
+  constructor() {
+    super();
+    this.render();
+  }
+
   render() {
-    const profileBtn = createElem('button', this, 'profile-btn');
-    profileBtn.setAttribute('aria-label', btn.ariaLabel);
-
-    const info = createElem('div', profileBtn, 'info');
-    const avatar = createElem('div', info, 'avatar');
-    const img = createElem('img', avatar);
-    img.setAttribute('src', profile.img.path);
-    img.setAttribute('alt', profile.img.alt);
-
-    const detail = createElem('div', info, 'detail');
-    const username = createElem('div', detail, 'username');
-    username.textContent = profile.username;
-    const userid = createElem('div', detail, 'userid');
-    userid.textContent = profile.userid;
-
-    const moreIcon = createElem('span', profileBtn, 'more-icon');
-    const i = createElem('i', moreIcon, moreIconClass);
-
-    profileBtn.addEventListener('click', () => {
-      alert(`${btn.ariaLabel} clicked`);
-    });
+    this.innerHTML = `
+      <button class="view-profile-btn" aria-label="view user profile">
+        <div class="user-info">
+          <div class="user-avatar">
+            <img src="${this.imgPath}" alt="${this.username} avatar" />
+          </div>
+          <div class="user-detail">
+            <span class="user-username">${this.username}</span>
+            <span class="user-userid">${this.userId}</span>
+          </div>
+        </div>
+  
+        <span class="btn-icon">
+          <i class="${this.btnFaIcon}"></i>
+        </span>
+      </button>
+    `;
   }
 
   connectedCallback() {
-    this.render();
+    const viewProfileBtn = this.querySelector('.view-profile-btn');
+    viewProfileBtn?.addEventListener('click', () => {
+      alert(`view user profile clicked`);
+    });
+  }
+
+  get username() {
+    return this.getAttribute('username');
+  }
+
+  get userId() {
+    return this.getAttribute('user-id');
+  }
+
+  get imgPath() {
+    return this.getAttribute('img-path');
+  }
+
+  get btnAria() {
+    return this.getAttribute('btn-aria');
+  }
+
+  get btnFaIcon() {
+    return this.getAttribute('btn-fa-icon');
   }
 }
 

@@ -13,34 +13,45 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
-    <script
-      src="https://kit.fontawesome.com/381cdc4554.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/381cdc4554.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="app">
       <header class="header-container">
         <div class="header-content">
-          <global-nav></global-nav>
-          <user-profile></user-profile>
+          <nav class="global-nav">
+            <nav-logo-link fa-icon="fab fa-twitter"></nav-logo-link>
+            <nav-menu-list>
+              <nav-menu-item text="home" fa-icon="fas fa-house-user" iscurrent="true"></nav-menu-item>
+              <nav-menu-item text="explore" fa-icon="fas fa-hashtag"></nav-menu-item>
+              <nav-menu-item text="notifications" fa-icon="far fa-bell" unread="3"></nav-menu-item>
+              <nav-menu-item text="messages" fa-icon="far fa-envelope"></nav-menu-item>
+              <nav-menu-item text="bookmarks" fa-icon="far fa-bookmark"></nav-menu-item>
+              <nav-menu-item text="lists" fa-icon="far fa-list-alt"></nav-menu-item>
+              <nav-menu-item text="connect" fa-icon="fas fa-at"></nav-menu-item>
+              <nav-menu-item text="profile" fa-icon="fas fa-user"></nav-menu-item>
+              <nav-menu-item text="more" fa-icon="fas fa-ellipsis-h"></na-vmen-item>
+            </nav-menu-list>
+            <nav-tweet-btn text="tweet"></nav-tweet-btn>
+          </nav>
+          <user-profile username="BirdHeart" user-id="@1234567890" img-path="./dist/static/imgs/tweeter_profile-2.jpg" btn-aria="view user profile" btn-fa-icon="fas fa-ellipsis-h" ></user-profile>
         </div>
       </header>
 
-      <main class="main-container">
+      <!-- <main class="main-container">
         <main-header></main-header>
         <main-tweet></main-tweet>
         <div class="main-divider"></div>
         <main-timeline></main-timeline>
-      </main>
+      </main> -->
 
-      <aside class="aside-container">
+      <!-- <aside class="aside-container">
         <div class="aside-content">
           <aside-header></aside-header>
           <aside-trend></aside-trend>
           <aside-footer></aside-footer>
         </div>
-      </aside>
+      </aside> -->
     </div>
   </body>
 </html>
