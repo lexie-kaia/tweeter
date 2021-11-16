@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./test.js" defer></script>
+    <style>
+      button {
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <button>normal button</button>
+    <my-counter count="1"></my-counter>
+
+    <custom-element>
+      <div slot="content">slot content</div>
+    </custom-element>
+
+    <script>
+      class MyCounter extends HTMLElement {
+        constructor() {
+          super();
+          this.shadow = this.attachShadow({ mode: 'open' });
+        }
+
+        get count() {
+          return this.getAttribute('count');
+        }
+
+        set count(val) {
+          this.setAttribute('count', val);
+        }
+
+        static get observedAttributes() {
+          return ['count'];
+        }
+
+        attributeChangedCallback(prop, oldVal, newVal) {
+          if (prop === 'count') {
+            this.render();
+            this.attachBtnOnClick();
+          }
+        }
+
+        connectedCallback() {
+          this.render();
+          this.attachBtnOnClick();
+          console.log(this.shadow);
+          console.log(this.shadowRoot);
+        }
+
+        render() {
+          this.shadow.innerHTML = `
+            <style>
+              button {
+                background: salmon;
+              }  
+            </style>
+		      	<h1>Counter</h1>
+			      prop ${this.count}
+			      <button id="btn">Increment</button>
+		      `;
+        }
+
+        attachBtnOnClick() {
+          const btn = this.shadow.querySelector('#btn');
+          btn.addEventListener('click', () => {
+            this.count += 1;
+          });
+        }
+      }
+
+      customElements.define('my-counter', MyCounter);
+    </script>
+  </body>
+</html>
