@@ -39,7 +39,7 @@
   color: #{$color};
 }
 
-@mixin btn-effect($background, $color: null) {
+@mixin btn-effect($background, $color: null, $line: $blue-line) {
   transition: background 100ms, box-shadow 100ms;
 
   &:hover,
@@ -56,7 +56,7 @@
     @if color != null {
       color: #{$color};
     }
-    box-shadow: 0 0 0 2px $blue-line;
+    box-shadow: 0 0 0 2px #{$line};
   }
 }
 
@@ -74,5 +74,15 @@
     background: $blue-hover;
     color: $blue;
     box-shadow: 0 0 0 2px $blue-line;
+  }
+}
+
+@mixin btn-icon-only($color: $dark-grey) {
+  @include inline-flex-center;
+  @include btn-size-36(36px);
+  color: #{$color};
+
+  .btn-icon {
+    @include icon-20;
   }
 }

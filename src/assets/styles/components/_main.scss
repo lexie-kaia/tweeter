@@ -1,0 +1,220 @@
+main-header {
+  .header-wrapper {
+    height: 52px;
+  }
+
+  .header {
+    position: fixed;
+    top: 0;
+    @include flex(space-between, center);
+    padding: 0 16px;
+    border-bottom: 1px solid $light-grey-1;
+    height: 52px;
+    width: 596px;
+    background: $white;
+
+    .title {
+      @include typo-large(700);
+      text-transform: capitalize;
+    }
+
+    .top-tweet-btn {
+      @include btn-icon-only($blue);
+      @include btn-effect-light;
+    }
+  }
+}
+
+main-tweet {
+  .main-tweet {
+    @include flex;
+    border-bottom: 1px solid $light-grey-1;
+    padding: 12px 16px;
+  }
+
+  .avatar {
+    @include avatar-size-48;
+    margin-right: 12px;
+    transition: box-shadow 100ms;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px $blue-line;
+    }
+  }
+
+  .form {
+    flex-grow: 1;
+
+    .textarea {
+      @include typo-large;
+      padding: 12px 0 16px;
+      border-bottom: 1px solid $light-grey-1;
+      width: 100%;
+      resize: none;
+
+      &::placeholder {
+        color: $dark-grey;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .footer {
+    @include flex(space-between, center);
+    margin-top: 8px;
+
+    .btn-list {
+      @include flex;
+    }
+
+    .option-btn {
+      @include btn-icon-only($blue);
+      @include btn-effect-light;
+    }
+
+    .submit-btn {
+      @include btn-size-40;
+      @include btn-color($blue-line, $white);
+      @include btn-effect($blue);
+      @include typo-regular(700);
+      padding: 0 16px;
+      text-transform: capitalize;
+    }
+  }
+}
+
+.main-divider {
+  border-bottom: 1px solid $light-grey-1;
+  height: 12px;
+  background: $offwhite;
+}
+
+main-timeline {
+  .feed-container {
+    @include flex;
+    padding: 12px 16px;
+    border-bottom: 1px solid $light-grey-1;
+
+    &:hover {
+      background: $offwhite;
+    }
+
+    .profile-avatar {
+      @include avatar-size-48;
+      flex-shrink: 0;
+      margin-right: 12px;
+    }
+  }
+
+  .feed-content {
+    flex-grow: 1;
+  }
+
+  .feed-header {
+    @include flex(space-between, null);
+
+    .feed-profile {
+      @include flex;
+      .profile-name {
+        @include typo-regular(700);
+        margin-right: 8px;
+        &:hover,
+        &:active,
+        &:focus-visible {
+          outline: none;
+          text-decoration: underline;
+        }
+      }
+
+      .profile-username {
+        @include typo-regular;
+        color: $dark-grey;
+        &::after {
+          content: '·';
+          margin: 0 4px;
+        }
+      }
+
+      .profile-posted {
+        @include typo-regular;
+        color: $dark-grey;
+      }
+    }
+
+    .more-btn {
+      @include btn-icon-only;
+      @include btn-effect-light;
+      margin: -6px;
+    }
+  }
+
+  .feed-body {
+    margin-top: 4px;
+    .feed-text {
+      @include typo-regular;
+    }
+
+    .feed-img {
+      @include flex(center, center);
+      overflow: hidden;
+      margin: 12px 0;
+      border: 1px solid $light-grey-1;
+      border-radius: $radius-m;
+
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+
+  .feed-footer {
+    .feed-btnlist {
+      @include flex;
+    }
+
+    .feed-btnitem {
+      @include flex(null, center);
+      flex-grow: 1;
+    }
+
+    .reaction-btn {
+      @include btn-icon-only;
+      margin-right: 4px;
+    }
+
+    .reply-btn,
+    .share-btn {
+      @include btn-effect-light;
+
+      &:hover + .reaction-count,
+      &:active + .reaction-count,
+      &:focus-visible + .reaction-count {
+        color: $blue;
+      }
+    }
+
+    .retweet-btn {
+      @include btn-effect($green-hover, $green, $green-line);
+
+      &:hover + .reaction-count,
+      &:active + .reaction-count,
+      &:focus-visible + .reaction-count {
+        color: $green;
+      }
+    }
+
+    .like-btn {
+      @include btn-effect($red-hover, $red, $red-line);
+
+      &:hover + .reaction-count,
+      &:active + .reaction-count,
+      &:focus-visible + .reaction-count {
+        color: $red;
+      }
+    }
+  }
+}
