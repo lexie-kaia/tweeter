@@ -11,7 +11,8 @@ import './assets/js/components/main/tweet-options';
 import './assets/js/components/main/tweet-submit-btn';
 import './assets/js/components/main/timeline-feeds';
 
-import './assets/js/components/aside/aside-header';
-import './assets/js/components/aside/trend-trendlist';
-import './assets/js/components/aside/aside-trend';
-import './assets/js/components/aside/aside-footer';
+import './assets/js/components/aside/search-bar';
+import './assets/js/components/aside/trend-header';
+import './assets/js/components/aside/trend-body';
+import './assets/js/components/aside/trend-footer';
+import './assets/js/components/aside/footer-menu';
