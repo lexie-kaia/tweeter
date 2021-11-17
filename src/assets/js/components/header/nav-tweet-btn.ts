@@ -11,8 +11,8 @@ class NavTweetBtn extends HTMLElement {
   }
 
   connectedCallback() {
-    const tweetBtn = this.querySelector('.tweet-btn');
-    tweetBtn?.addEventListener('click', () => {
+    const tweetBtn = this.querySelector('.tweet-btn')! as HTMLButtonElement;
+    tweetBtn.addEventListener('click', () => {
       alert('create a tweet clicked');
     });
   }

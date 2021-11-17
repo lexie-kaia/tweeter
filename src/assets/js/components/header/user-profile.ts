@@ -25,8 +25,8 @@ class UserProfile extends HTMLElement {
   }
 
   connectedCallback() {
-    const viewProfileBtn = this.querySelector('.view-profile-btn');
-    viewProfileBtn?.addEventListener('click', () => {
+    const viewProfileBtn = this.querySelector('.view-profile-btn')! as HTMLButtonElement;
+    viewProfileBtn.addEventListener('click', () => {
       alert(`view user profile clicked`);
     });
   }

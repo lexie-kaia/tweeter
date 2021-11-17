@@ -11,8 +11,8 @@ class TweetSubmitBtn extends HTMLElement {
   }
 
   connectedCallback() {
-    const submitBtn = this.querySelector('.submit-btn');
-    submitBtn?.addEventListener('click', () => {
+    const submitBtn = this.querySelector('.submit-btn')! as HTMLButtonElement;
+    submitBtn.addEventListener('click', () => {
       alert('submit a tweet clicked');
     });
   }

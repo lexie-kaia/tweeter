@@ -20,8 +20,8 @@ class PageHeader extends HTMLElement {
   }
 
   connectedCallback() {
-    const topTweetBtn = this.querySelector('.top-tweets-btn');
-    topTweetBtn?.addEventListener('click', () => {
+    const topTweetBtn = this.querySelector('.top-tweets-btn')! as HTMLButtonElement;
+    topTweetBtn.addEventListener('click', () => {
       alert(`top tweets on clicked`);
     });
   }

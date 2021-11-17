@@ -24,8 +24,8 @@ class TweetOptionItem extends HTMLElement {
   }
 
   connectedCallback() {
-    const optionBtn = this.querySelector('.option-btn');
-    optionBtn?.addEventListener('click', () => {
+    const optionBtn = this.querySelector('.option-btn')! as HTMLButtonElement;
+    optionBtn.addEventListener('click', () => {
       alert(`${this.btnAria} clicked`);
     });
   }
